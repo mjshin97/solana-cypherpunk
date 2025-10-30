@@ -1,9 +1,15 @@
-# TrustedChain Solana Program
+```bash
+# Create the project directory and move all repository files into it
+mkdir ~/tc-solana-program
+# (Move all repository files into the tc-solana-program folder)
 
-[Explorer](https://explorer.solana.com/address/8ZVwAHLXLfPgzm5UFtQ52P9awhQ9dQ74ci8GniiqW4Jc?cluster=devnet)
+# Navigate to the app directory
+cd ~/tc-solana-program/rwa_invoice/tests/rwa-ui
 
-To verify the Solana program
+# Start the app
+FAST_REFRESH=false npm start
 
-```shell
-solana-verify verify-from-repo -u https://api.devnet.solana.com --program-id 8ZVwAHLXLfPgzm5UFtQ52P9awhQ9dQ74ci8GniiqW4Jc https://github.com/staex-io/tc-solana-program --commit-hash fbb0b13ef9dbcb5db82d2ef7390bc49051cb13c5 --library-name tc_solana_program --mount-path .
-```
+# After running the command, open your browser and go to:
+# http://localhost:3000
+# You can modify the app by editing App.tsx located in:
+# ~/tc-solana-program/rwa_invoice/tests/rwa-ui/src/App.tsx
