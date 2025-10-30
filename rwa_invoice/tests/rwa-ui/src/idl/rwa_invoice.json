@@ -1,0 +1,125 @@
+{
+  "address": "61VvCX1CSBg24fg28vBgmeW7QmYgMMeCaFBWyHRaZ5zT",
+  "metadata": {
+    "name": "rwa_invoice",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "create_invoice",
+      "discriminator": [
+        154,
+        170,
+        31,
+        135,
+        134,
+        100,
+        156,
+        146
+      ],
+      "accounts": [
+        {
+          "name": "invoice",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "bus_id",
+          "type": "string"
+        },
+        {
+          "name": "date",
+          "type": "string"
+        },
+        {
+          "name": "passengers",
+          "type": "u32"
+        },
+        {
+          "name": "revenue",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Invoice",
+      "discriminator": [
+        51,
+        194,
+        250,
+        114,
+        6,
+        104,
+        18,
+        164
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Invoice",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bus_id",
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "type": "string"
+          },
+          {
+            "name": "passengers",
+            "type": "u32"
+          },
+          {
+            "name": "revenue",
+            "type": "u64"
+          },
+          {
+            "name": "items",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "InvoiceItem"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "InvoiceItem",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ]
+}
